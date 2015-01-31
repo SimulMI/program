@@ -1,0 +1,40 @@
+@startuml
+
+note "Diagramme des classes métier" as diag_cm
+
+class "SimulMI" as simul_mi {
+	dateDebut
+	dateFin
+}
+
+abstract class "Capteur" as capteur {
+	id
+	type
+	piece
+}
+
+class "CapteurBooleen" as capteur_booleen {
+	
+}
+
+class "CapteurTernaire" as capteur_ternaire {
+	
+}
+
+class "CapteurReel" as capteur_reel {
+	
+}
+
+class "Evenement" as evt {
+	valeur
+	date
+}
+
+capteur <|-- capteur_booleen
+capteur <|-- capteur_ternaire
+capteur <|-- capteur_reel
+
+simul_mi "1" -down- "1..*" capteur : "Concerner"
+capteur "1" -right- "1..*" evt : "Concerner"
+
+@enduml

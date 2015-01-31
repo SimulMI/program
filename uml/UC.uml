@@ -1,0 +1,24 @@
+@startuml
+
+:Utilisateur: as util
+
+usecase (Paramétrer la simulation) as param_simul
+usecase (Choisir les salles à traiter) as choix_salles
+usecase (Choisir les capteurs à traiter) as choix_capteurs
+usecase (Modifier le calcul de la simulation) as modif_calcul
+usecase (Lancer la simulation) as lancer_simul
+usecase (Créer un fichier de résultat compatible\navec la plateforme OM2M) as creer_fichier
+usecase (Enregistrer le fichier de résultat) as enreg_fichier
+usecase (Visualiser le fichier de résultat) as visu_fichier
+
+util -right- param_simul
+util -up- lancer_simul
+param_simul <|.. choix_salles : [«extend»]
+param_simul <|.. choix_capteurs : [«extend»]
+param_simul <|.. modif_calcul : [«extend»]
+param_simul <|.. lancer_simul : [«extend»]
+lancer_simul -right-> creer_fichier : [«include»]
+creer_fichier <|.. enreg_fichier : [«extend»]
+creer_fichier <|.. visu_fichier : [«extend»]
+
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+
+note "Exemple :\n<evenement date=''2015-01-10 19:36:23''\nnomCapteur=''VAL VEN RDC EXT SMET''\nvaleur=''3'' />\n\n<b>Capteur</b> :\nID : VAL VEN RDC EXT SMET\nType : VEN\Pièce : RDC EXT SMET\n\n<b>Évènement :</b>\nValeur : 3\nDate : 2015-01-10 19:36:23" as note
+
+@enduml
